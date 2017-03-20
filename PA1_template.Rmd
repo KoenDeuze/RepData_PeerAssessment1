@@ -18,16 +18,30 @@ activity$date2 <- as.Date(activity$date, format = "%Y-%m-%d")
 ## What is mean total number of steps taken per day?
 ```{r total_steps_per_day, echo=TRUE}
 # create an aggregate data set of the sum of the steps per day
-agg_day_activity <- aggregate(activity$steps, by=list(activity$date2), FUN=sum, na.rm=TRUE, na.action=NULL)
+agg_day_activity <- setNames(aggregate(activity$steps, by=list(activity$date2), FUN=sum, na.rm=TRUE, na.action=NULL),c("date","steps"))
 
 # create a histogram of the total number of steps per day
-hist(agg_day_activity$x, main = "Histogram of total number of steps per day", xlab = "Steps per day")
+hist(agg_day_activity$steps, main = "Histogram of total number of steps per day", xlab = "Steps per day")
+
+# calculate mean total number of steps per day
+round(mean(agg_day_activity$steps))
+
+# calculate median total number of steps per day
+round(median(agg_day_activity$steps))
 
 ```
 
 
 ## What is the average daily activity pattern?
+```{r average daily activity pattern}
 
+# create dataset with mean number of steps per interval
+mean_steps_per_interval <- aggregate(list(steps = activity$steps), list(interval=activity$interval), mean,na.rm=TRUE, na.action=NULL)
+
+# create the time-series plot
+plot(mean_steps_per_interval,type='l', main="average number of steps per interval")
+
+```
 
 
 ## Imputing missing values
