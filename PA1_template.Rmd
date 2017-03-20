@@ -86,8 +86,6 @@ averages_week_weekend <- aggregate(steps ~ interval + week_weekend, data = activ
 library(lattice)
 xyplot(averages_week_weekend$steps ~ averages_week_weekend$interval | factor(averages_week_weekend$week_weekend), type = "l", layout = c(1, 2), xlab = "Interval", ylab = "Number of steps")
 
-
-
-
-
 ```
+
+# thank you!

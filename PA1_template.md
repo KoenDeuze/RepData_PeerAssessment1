@@ -114,3 +114,5 @@ xyplot(averages_week_weekend$steps ~ averages_week_weekend$interval | factor(ave
 ```
 
 ![](PA1_template_files/figure-html/difference weekdays and weekends-1.png)<!-- -->
+
+# thank you!
