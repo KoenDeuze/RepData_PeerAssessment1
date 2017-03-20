@@ -84,7 +84,7 @@ activity$week_weekend <- factor(ifelse(activity$weekday %in% c("zaterdag","zonda
 averages_week_weekend <- aggregate(steps ~ interval + week_weekend, data = activity, mean)
 
 library(lattice)
-xyplot(averages_week_weekend$steps ~ averages_week_weekend$interval | factor(averages_week_weekend$week_weekend), data=activity, pch=20, main="weekend vs weekdays", xlab="interval",  ylab="steps",layout=c(2,1),type=c("l","l"))
+xyplot(averages_week_weekend$steps ~ averages_week_weekend$interval | factor(averages_week_weekend$week_weekend), data=activity, pch=20, main="weekend vs weekdays", xlab="interval",  ylab="steps",layout=c(2,1),type=c("l"))
 
 
 
