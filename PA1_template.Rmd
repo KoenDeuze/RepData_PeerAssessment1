@@ -41,6 +41,8 @@ mean_steps_per_interval <- aggregate(list(steps = activity$steps), list(interval
 # create the time-series plot
 plot(mean_steps_per_interval,type='l', main="average number of steps per interval")
 
+# what is the interval index with the highest average number of steps
+mean_steps_per_interval[which(mean_steps_per_interval$steps == max(mean_steps_per_interval$steps)),]
 ```
 
 
