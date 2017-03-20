@@ -56,7 +56,7 @@ sum(is.na(activity$steps))
 for(i in 1:nrow(activity)) {
         if(is.na(activity$steps[i])) {
                 mean_value <- mean_steps_per_interval$steps[which(mean_steps_per_interval$interval==activity$interval[i])]
-                activity$steps <- mean_value
+                activity$steps[i] <- mean_value
         }
 }
 
@@ -70,3 +70,25 @@ hist(agg_day_activity$steps, main = "Histogram of total number of steps per day"
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
+
+```{r difference weekdays and weekends}
+
+# create a weekday vector
+weekdays <- c('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday')
+
+# create extra factor variable weekday/weekend
+activity$weekday <- factor(weekdays(activity$date2))
+activity$week_weekend <- factor(ifelse(activity$weekday %in% c("zaterdag","zondag"),"weekend","week"))
+
+# create aggregate: steps per interval and week/weekend
+averages_week_weekend <- aggregate(steps ~ interval + week_weekend, data = activity, mean)
+
+library(lattice)
+xyplot(averages_week_weekend$steps ~ averages_week_weekend$interval | factor(averages_week_weekend$week_weekend), data=activity, pch=20, main="weekend vs weekdays", xlab="interval",  ylab="steps",layout=c(2,1),type=c("l","l"))
+
+
+
+
+
+
+```
