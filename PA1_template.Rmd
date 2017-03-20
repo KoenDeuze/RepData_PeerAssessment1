@@ -7,7 +7,15 @@ output:
 
 
 ## Loading and preprocessing the data
+```{r loading_preprocessing, echo=TRUE}
 
+# load the activity-data
+activity <- read.csv("activity.csv")
+
+# create new column date in data-format
+activity$date2 <- as.Date(activity$date, format = "%Y-%m-%d")
+
+```
 
 
 ## What is mean total number of steps taken per day?
