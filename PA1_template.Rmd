@@ -47,7 +47,7 @@ mean_steps_per_interval[which(mean_steps_per_interval$steps == max(mean_steps_pe
 
 
 ## Imputing missing values
-```{r}
+```{r impute missing values}
 
 # calculate the total number of missing values ('NA')
 sum(is.na(activity$steps))
@@ -71,7 +71,7 @@ hist(agg_day_activity$steps, main = "Histogram of total number of steps per day"
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-```{r difference weekdays and weekends}
+```{r difference_weekdays_weekends, echo = TRUE, fig.width=6, fig.height = 6}
 
 # create a weekday vector
 weekdays <- c('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday')

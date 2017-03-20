@@ -92,7 +92,7 @@ agg_day_activity_imputed <- setNames(aggregate(activity$steps, by=list(activity$
 hist(agg_day_activity$steps, main = "Histogram of total number of steps per day", xlab = "Steps per day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+![](PA1_template_files/figure-html/impute missing values-1.png)<!-- -->
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
@@ -113,6 +113,6 @@ library(lattice)
 xyplot(averages_week_weekend$steps ~ averages_week_weekend$interval | factor(averages_week_weekend$week_weekend), type = "l", layout = c(1, 2), xlab = "Interval", ylab = "Number of steps")
 ```
 
-![](PA1_template_files/figure-html/difference weekdays and weekends-1.png)<!-- -->
+![](PA1_template_files/figure-html/difference_weekdays_weekends-1.png)<!-- -->
 
 # thank you!
