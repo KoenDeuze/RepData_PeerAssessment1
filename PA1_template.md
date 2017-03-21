@@ -52,7 +52,7 @@ mean_steps_per_interval <- aggregate(list(steps = activity$steps), list(interval
 plot(mean_steps_per_interval,type='l', main="average number of steps per interval")
 ```
 
-![](PA1_template_files/figure-html/average daily activity pattern-1.png)<!-- -->
+![](PA1_template_files/figure-html/average_daily_activity_pattern-1.png)<!-- -->
 
 ```r
 # what is the interval index with the highest average number of steps
@@ -92,7 +92,7 @@ agg_day_activity_imputed <- setNames(aggregate(activity$steps, by=list(activity$
 hist(agg_day_activity$steps, main = "Histogram of total number of steps per day", xlab = "Steps per day")
 ```
 
-![](PA1_template_files/figure-html/impute missing values-1.png)<!-- -->
+![](PA1_template_files/figure-html/impute_missing_values-1.png)<!-- -->
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
