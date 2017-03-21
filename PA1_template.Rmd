@@ -33,7 +33,11 @@ round(median(agg_day_activity$steps))
 
 
 ## What is the average daily activity pattern?
+<<<<<<< HEAD
 ```{r average_daily_activity_pattern, echo=TRUE}
+=======
+```{r average_daily_activity_pattern, echo = TRUE}
+>>>>>>> 635740c57b29f4b274a58b704ecda2e4cdfc7887
 
 # create dataset with mean number of steps per interval
 mean_steps_per_interval <- aggregate(list(steps = activity$steps), list(interval=activity$interval), mean,na.rm=TRUE, na.action=NULL)
@@ -47,7 +51,11 @@ mean_steps_per_interval[which(mean_steps_per_interval$steps == max(mean_steps_pe
 
 
 ## Imputing missing values
+<<<<<<< HEAD
 ```{r impute_missing_values, echo=TRUE}
+=======
+```{r impute_missing_values, echo = TRUE}
+>>>>>>> 635740c57b29f4b274a58b704ecda2e4cdfc7887
 
 # calculate the total number of missing values ('NA')
 sum(is.na(activity$steps))
